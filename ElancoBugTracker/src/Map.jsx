@@ -28,32 +28,34 @@ function useGetTicks() {
     const {data, error, isLoading} = useSWR(url, fetcher);
 
     if (error) {
-        return {coords: null, loading: false, error: error};
+        return {ticks: null, loading: false, error: error};
     }
 
     if (isLoading) {
-        return {coords : null, loading : true, error : false};
+        return {ticks : null, loading : true, error : false};
     }
 
     if (data.length < 0) {
-        return {coords : null, loading : false, error : "Coordinates not found"};
+        return {ticks : null, loading : false, error : "Coordinates not found"};
     }
-
-    return {coords : [data[0].lat, data[0].lon], loading : false, error : false};
+    return {ticks : data, loading : false, error : false};
 }
 
 function CreatePoints({ticks}){
-    let coords = []
+    let points = []
     for (let i=0; i<ticks.length; i++){
-        const {data, loading, error} = getCoordinates(ticks[i])
-        coords.push(data);
+        const {coords} = getCoordinates(ticks[i].location);
+        // retrieves the coordinate for the scpecific location of that tick
+        // NOTE: the api descriptions says the location key is “city” however it is actually “location”.
+        points.push(coords);
     }
-    return coords;
+    return points;
 }
 
 // function useGetCoordinates({name}) {
 //     // takes the name provided and uses open weather maps' Geocoding API to find the coordinate of that named location
 //     // note that the use indicates a hook
+//     // note that the appid has been disabled and is no longer valid
 //     const url = "http://api.openweathermap.org/geo/1.0/direct"
 //     // constructs the paramters required to access the api, and the data to be processed.
 //     const tokens = {q : name, country : "GB", limit : 1, appid : "1dff8a44e9cbdfa8b7619954734e7045"}
@@ -77,7 +79,7 @@ function CreatePoints({ticks}){
 // }
 
 function getCoordinates(name){
-    // takes the name provided and cross referances it against the local json file to find that locations
+    // takes the name provided and cross referances it against the local json file to find that location
     let data = places[name];
     const offset = 0.02
     if (data == null) { data = [54.0021959912, -2.54204416515]} // checks that the coordinates were found,
@@ -88,9 +90,23 @@ function getCoordinates(name){
     return {coords : [data[0], data[1]], loading : false, error : false};
 }
 
+function MakeMarkers({ticks}) {
+    // calls the coordinate conversions to gather the coordinates of the ticks
+    // iterates though every tick in the ticks object and creates a new marker at its new respective coordinates.
+    const coords = CreatePoints({ticks});
+    return ticks.map((tick, i) => (
+        <Marker position={coords[i]}>
+            <Popup>
+                Info about the tick<br/>
+                more info
+            </Popup>
+        </Marker>
+    ));
+}
+
 function Map() {
 
-    let {coords, loading, error} = getCoordinates("Cardif")
+    let {ticks, loading, error} = useGetTicks();
 
     return (
 
@@ -103,12 +119,11 @@ function Map() {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {/* ensures that the map isn't loaded until all coordinates are loaded. */}
-                    {!loading && coords && !error &&(
-                            <Marker position={coords}>
-                                <Popup>
-                                    A pretty CSS3 popup. <br/> Easily customizable.
-                                </Popup>
-                            </Marker>
+                    {!loading && ticks && !error &&(
+                        <>
+                            {/* generates all the Markers on the map */}
+                            <MakeMarkers ticks = {ticks} />
+                        </>
                     )}
                 </MapContainer>
             </div>
