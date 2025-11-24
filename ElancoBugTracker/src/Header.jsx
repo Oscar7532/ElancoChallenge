@@ -1,7 +1,7 @@
 function Header(){
     return (
         <header>
-            <h1>The Bug Tracker Site</h1>
+            <h1>The Tick Tracker Site</h1>
         </header>
     );
 }
