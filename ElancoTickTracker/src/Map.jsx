@@ -12,7 +12,7 @@ import species_colour from "./assets/species.json"
 // imports the species json object to allow the colour matching of species.
 
 import {useEffect} from 'react';
-import './Map.css'
+import './styles/Map.css'
 import places from './assets/places.json'
 
 function FixMapRender() {
