@@ -13,16 +13,104 @@ function TickInfo() {
             </h2>
             <ul>
                 <li>
-                    Map Marker Colour:
+                    Map Marker Colour: Green
                 </li>
                 <li>
-                    Habitat
+                    Habitat: Wetlands, Marshes and Reed beds
                 </li>
                 <li>
-                    Hosts
+                    Hosts: Wetland rodents and water voles
                 </li>
                 <li>
+                    Description: Very small, Hard-shelled and plain reddish-brown with no markings (2-3mm unfed, up to 6mm)
+                </li>
+                <li>
+                    Reaction if bitten: Mild redness
+                </li>
+            </ul>
 
+            <h2>
+                Southern Rodent Tick
+            </h2>
+            <ul>
+                <li>
+                    Map Marker Colour: Red
+                </li>
+                <li>
+                    Habitat: Underground, (Mostly southern UK)
+                </li>
+                <li>
+                    Hosts: Mice, vowels and small mammals in burrows
+                </li>
+                <li>
+                    Description: Very small, plain brown (2-3mm unfed, up to 6mm)
+                </li>
+                <li>
+                    Reaction if bitten: Can cause small red lump and mild irritation
+                </li>
+            </ul>
+
+            <h2>
+                Passerine Tick
+            </h2>
+            <ul>
+                <li>
+                    Map Marker Colour: BLue
+                </li>
+                <li>
+                    Habitat: Long mouthparts, can be found in: Bird nests/boxes and roosting areas
+                </li>
+                <li>
+                    Hosts: Songbirds
+                </li>
+                <li>
+                    Description: medium sized, brown body, with a dark shield, with long mouthparts (3mm unfed, up to 8mm)
+                </li>
+                <li>
+                    Reaction if bitten: Looks like a small black dot, can cause mild irritation
+                </li>
+            </ul>
+
+
+            <h2>
+                Tree-hole Tick
+            </h2>
+            <ul>
+                <li>
+                    Map Marker Colour: Grey
+                </li>
+                <li>
+                    Habitat: Tree/bird nest cavities, nest boxes and old trees
+                </li>
+                <li>
+                    Hosts: Hole-nesting birds
+                </li>
+                <li>
+                    Description: very small tan/brown (2-3mm)
+                </li>
+                <li>
+                    Reaction if bitten: can cause mild irritation
+                </li>
+            </ul>
+
+            <h2>
+                Fox/badger Tick
+            </h2>
+            <ul>
+                <li>
+                    Map Marker Colour: Orange
+                </li>
+                <li>
+                    Habitat: Widespread and genreally in areas with foxes badgers and dogs
+                </li>
+                <li>
+                    Hosts: Foxes, badgers, dogs and cats (sometimes)
+                </li>
+                <li>
+                    Description: Medium sized, red-brown (3mm) if unfed, grey and swollen if not (8mm)
+                </li>
+                <li>
+                    Reaction if bitten: slight swelling and mild irritation
                 </li>
             </ul>
 

@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a91fc74-7737-4277-ab67-927c5f5773de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/AppNavLink.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/Info.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/Nav_buttons.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/Report.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/ReportForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/TickInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ElancoBugTracker/src/appNavLink.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/src/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/src/Map.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/src/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/src/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElancoBugTracker/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoBugTracker/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ElancoTickTracker/src/ReportForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoTickTracker/src/ReportForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ElancoTickTracker/src/TickInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoTickTracker/src/TickInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ElancoTickTracker/src/assets/species.json" beforeDir="false" afterPath="$PROJECT_DIR$/ElancoTickTracker/src/assets/species.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +66,7 @@
       <recent name="C:\Users\Peter\git_repos\ElancoChallenge" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Peter\git_repos\ElancoChallenge\ElancoTickTracker\src\styles" />
       <recent name="C:\Users\Peter\git_repos\ElancoChallenge\ElancoBugTracker\src" />
     </key>
   </component>
@@ -95,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763892516540</updated>
       <workItem from="1763892518198" duration="6752000" />
-      <workItem from="1763998690664" duration="29747000" />
+      <workItem from="1763998690664" duration="38782000" />
     </task>
     <servers />
   </component>
