@@ -1,17 +1,15 @@
 import Header from './Header.jsx'
-import Map from './Map.jsx'
 import Nav from './AppNavLink.jsx'
+import RForm from './ReportForm.jsx'
 
-function App() {
+function Report() {
     return (
         <>
             <Header />
             <Nav />
-            <Map />
+            <RForm />
         </>
-        );
+    )
 }
 
-
-
-export default App
+export default Report;

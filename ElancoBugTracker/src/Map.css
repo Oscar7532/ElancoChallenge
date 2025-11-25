@@ -1,4 +1,6 @@
 .leaflet-container {
     width: 200%;
     height: 75vh;
+    align-items: center;
+
 }

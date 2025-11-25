@@ -127,6 +127,9 @@ function MakeMarkers({ticks}) {
                     <br/>
                     <button onClick= {() =>{
                         window.open(`https://www.google.com/maps/search/?api=1&query=${coords[i][0]}%2C${coords[i][1]}`)
+                    }} color={"blue"}>Open in Maps</button>
+                    <button onClick= {() =>{
+                        window.open(`https://www.google.com/maps/dir/?api=1&destination=${coords[i][0]}%2C${coords[i][1]}`)
                     }} color={"blue"}>Directions</button>
                 </Popup>
             </Marker>

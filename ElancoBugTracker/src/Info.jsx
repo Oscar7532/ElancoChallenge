@@ -1,17 +1,15 @@
 import Header from './Header.jsx'
-import Map from './Map.jsx'
 import Nav from './AppNavLink.jsx'
+import TInfo from './TickInfo.jsx'
 
-function App() {
+function Info(){
     return (
         <>
             <Header />
             <Nav />
-            <Map />
+            <TInfo />
         </>
-        );
+    )
 }
 
-
-
-export default App
+export default Info;
