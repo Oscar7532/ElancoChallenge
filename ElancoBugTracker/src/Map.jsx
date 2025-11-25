@@ -6,6 +6,11 @@ import useSWR from "swr";
 //import fetchWithToken from "swr";
 // imports swr for get methods
 
+import L from 'leaflet'
+// imports L for the custom markers
+import species_colour from "./assets/species.json"
+// imports the species json object to allow the colour matching of species.
+
 import {useEffect} from 'react';
 import './Map.css'
 import places from './assets/places.json'
@@ -18,6 +23,16 @@ function FixMapRender() {
         }, 200)
     }, [map])
     return null;
+}
+
+function createCustomMarker(colour){
+    return L.divIcon({
+        className: 'tick-marker',
+        html:`<div style='background:${colour}; width:20px; height:20px; border-radius:50%; border:1px solid #ffffff;'></div>`,
+        iconSize: [25, 25],
+        iconAnchor: [10,10],
+    })
+
 }
 
 function useGetTicks() {
@@ -35,7 +50,7 @@ function useGetTicks() {
         return {ticks : null, loading : true, error : false};
     }
 
-    if (data.length < 0) {
+    if (data.length <= 0) {
         return {ticks : null, loading : false, error : "Coordinates not found"};
     }
     return {ticks : data, loading : false, error : false};
@@ -81,7 +96,7 @@ function CreatePoints({ticks}){
 function getCoordinates(name){
     // takes the name provided and cross referances it against the local json file to find that location
     let data = places[name];
-    const offset = 0.02
+    const offset = 0.01
     if (data == null) { data = [54.0021959912, -2.54204416515]} // checks that the coordinates were found,
     // if not they are then set to the center of the UK.
     data[0] += offset - (Math.random() * (2 * offset));
@@ -94,15 +109,33 @@ function MakeMarkers({ticks}) {
     // calls the coordinate conversions to gather the coordinates of the ticks
     // iterates though every tick in the ticks object and creates a new marker at its new respective coordinates.
     const coords = CreatePoints({ticks});
-    return ticks.map((tick, i) => (
-        <Marker position={coords[i]}>
-            <Popup>
-                Info about the tick<br/>
-                more info
-            </Popup>
-        </Marker>
-    ));
+    return ticks.map((tick, i) => {
+        const colour = species_colour[tick.species];
+        return (
+            <Marker key={tick.id} position={coords[i]} icon={createCustomMarker(colour)}>
+                <Popup>
+                    Species: {tick.species}
+                    <br/>Latin Name: {tick.latinName}
+                    <br/>Location: {tick.location}
+                    <br/>Date/Time: {tick.date}
+                    <br/>ID: {tick.id}
+                    <br/>
+                    <br/>
+                    <button onClick={() =>  navigator.clipboard.writeText(
+                        `Species: ${tick.species}, Latin Name: ${tick.latinName}, Location: ${tick.location}, Date: ${tick.date}, ID: ${tick.id}`)}
+                    >Share/Copy</button>
+                    <br/>
+                    <button onClick= {() =>{
+                        window.open(`https://www.google.com/maps/search/?api=1&query=${coords[i][0]}%2C${coords[i][1]}`)
+                    }} color={"blue"}>Directions</button>
+                </Popup>
+            </Marker>
+        );
+    });
 }
+
+
+
 
 function Map() {
 
